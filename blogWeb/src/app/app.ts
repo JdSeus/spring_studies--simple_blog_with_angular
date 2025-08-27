@@ -1,14 +1,14 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
-import { MATERIAL_IMPORTS } from './material.imports';
+import { MATERIAL_IMPORTS } from 'app/material.imports';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ...MATERIAL_IMPORTS, ReactiveFormsModule, FormsModule],
+  imports: [RouterOutlet, RouterLink, ...MATERIAL_IMPORTS, ReactiveFormsModule, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
