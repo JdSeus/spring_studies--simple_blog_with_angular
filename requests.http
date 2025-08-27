@@ -39,4 +39,10 @@ Content-Type: application/json
 ###
 #Like Post By Id
 
-POST {{baseUrl}}/comments/create?postId=1&postedBy=Teste&content=This%20is%20my%20comment
+POST {{baseUrl}}/comments/create?postId=1&postedBy=Teste
+Accept: application/json
+Content-Type: application/json
+
+{
+    "content": "This is my comment!"
+}
