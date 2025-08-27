@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { MATERIAL_IMPORTS } from 'app/material.imports';
+import { PostService } from 'app/service/post-service';
 
 @Component({
   selector: 'app-create-post',
@@ -24,7 +25,8 @@ export class CreatePost {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private postService: PostService
   ) {};
 
   ngOnInit() {
@@ -51,6 +53,18 @@ export class CreatePost {
     if(index >= 0) {
       this.tags.splice(index, 1);
     }
+  }
+
+  createPost() {
+    const data = this.postForm.value;
+    data.tags = this.tags;
+
+    this.postService.createNewPost(data).subscribe(res => {
+      this.snackBar.open("Post Created Succesfully!", "Ok");
+      this.router.navigateByUrl("/");
+    }, error => {
+      this.snackBar.open("Something Went Wrong!", "Ok");
+    });
   }
 
 }
