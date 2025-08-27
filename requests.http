@@ -28,3 +28,10 @@ Content-Type: application/json
 GET {{baseUrl}}/posts/1
 Accept: application/json
 Content-Type: application/json
+
+###
+#Like Post By Id
+
+PUT {{baseUrl}}/posts/1/like
+Accept: application/json
+Content-Type: application/json
