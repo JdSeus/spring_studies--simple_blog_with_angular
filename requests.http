@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:8080/api
+
+###
+#Create Post
+
+POST {{baseUrl}}/posts
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Sample Post",
+    "content": "This is the content of the post.",
+    "postedBy": "John",
+    "img": "https://example.com/image.jpg",
+    "tags": ["tag1", "tag2"]
+}
