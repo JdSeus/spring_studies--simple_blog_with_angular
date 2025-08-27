@@ -4,13 +4,15 @@ import { PostService } from 'app/service/post-service';
 import { MATERIAL_IMPORTS } from 'app/material.imports';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-view-all',
     imports: [
     ...MATERIAL_IMPORTS,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   templateUrl: './view-all.html',
   styleUrl: './view-all.scss'
