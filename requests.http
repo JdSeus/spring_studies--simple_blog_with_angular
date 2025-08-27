@@ -21,3 +21,10 @@ Content-Type: application/json
 GET {{baseUrl}}/posts
 Accept: application/json
 Content-Type: application/json
+
+###
+#Get Post By Id
+
+GET {{baseUrl}}/posts/1
+Accept: application/json
+Content-Type: application/json

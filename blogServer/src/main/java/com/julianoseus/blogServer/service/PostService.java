@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface PostService {
 
-    public Post savePost(Post post);
-    public List<Post> getAllPosts();
+    Post savePost(Post post);
+    List<Post> getAllPosts();
+    Post getPostById(Long postId);
 }
