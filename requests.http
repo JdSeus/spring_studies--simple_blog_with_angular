@@ -55,3 +55,10 @@ Accept: application/json
 Content-Type: application/json
 
 ###
+#Search Posts
+
+GET {{baseUrl}}/posts/search/post
+Accept: application/json
+Content-Type: application/json
+
+###

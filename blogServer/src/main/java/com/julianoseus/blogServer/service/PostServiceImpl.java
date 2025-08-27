@@ -50,4 +50,8 @@ public class PostServiceImpl implements PostService {
         }
     }
 
+    public List<Post> searchByName(String name) {
+        return postRepository.findAllByNameContaining(name);
+    }
+
 }
