@@ -35,3 +35,8 @@ Content-Type: application/json
 PUT {{baseUrl}}/posts/1/like
 Accept: application/json
 Content-Type: application/json
+
+###
+#Like Post By Id
+
+POST {{baseUrl}}/comments/create?postId=1&postedBy=Teste&content=This%20is%20my%20comment
