@@ -14,3 +14,10 @@ Content-Type: application/json
     "img": "https://example.com/image.jpg",
     "tags": ["tag1", "tag2"]
 }
+
+###
+#Get Posts
+
+GET {{baseUrl}}/posts
+Accept: application/json
+Content-Type: application/json
