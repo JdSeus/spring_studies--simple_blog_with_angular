@@ -46,3 +46,12 @@ Content-Type: application/json
 {
     "content": "This is my comment!"
 }
+
+###
+#Get Comments By Id
+
+GET {{baseUrl}}/comments/1
+Accept: application/json
+Content-Type: application/json
+
+###

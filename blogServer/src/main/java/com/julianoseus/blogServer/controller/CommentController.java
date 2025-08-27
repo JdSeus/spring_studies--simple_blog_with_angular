@@ -24,4 +24,13 @@ public class CommentController {
 
     }
 
+    @GetMapping("comments/{postId}")
+    public ResponseEntity<?> getCommentsByPostId(@PathVariable Long postId) {
+        try {
+            return ResponseEntity.ok(commentService.getCommentsByPostId(postId));
+        } catch(Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something went wrong.");
+        }
+    }
+
 }
