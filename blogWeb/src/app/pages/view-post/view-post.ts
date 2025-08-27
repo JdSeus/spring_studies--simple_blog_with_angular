@@ -23,6 +23,7 @@ export class ViewPost {
 
   postId: any;
   postData: any;
+  comments: any;
 
   commentForm!: FormGroup;
 
@@ -51,6 +52,15 @@ export class ViewPost {
 
     this.commentService.createComment(this.postId, postedBy, content).subscribe(res => {
       this.matSnackBar.open("Comment Published Succesfully!", "Ok");
+      this.getCommentsByPost();
+    }, error => {
+      this.matSnackBar.open("Something went Wrong!", "Ok");
+    });
+  }
+
+  getCommentsByPost() {
+    this.commentService.getAllCommentsByPost(this.postId).subscribe(res => {
+      this.comments = res;
     }, error => {
       this.matSnackBar.open("Something went Wrong!", "Ok");
     });
@@ -60,6 +70,7 @@ export class ViewPost {
     this.postService.getPostById(this.postId).subscribe(res => {
       this.postData = res;
       console.log(res);
+      this.getCommentsByPost();
     }, error => {
       this.matSnackBar.open("Something went Wrong!", "Ok");
     });
